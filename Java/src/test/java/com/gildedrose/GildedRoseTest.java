@@ -8,12 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
 
     @Test
-    void updateQuality() {
+    public void updateQuality() {
         CombinationApprovals.verifyAllCombinations(
                 this::doUpdateQuality,
                 new String[]{"foo", "Aged Brie", "Backstage passes to a TAFKAL80ETC concert", "Sulfuras, Hand of Ragnaros"},
                 new Integer[]{-1, 0, 2, 6, 11},
                 new Integer[]{0, 1, 49, 50});
+    }
+
+    @Test
+    public void updateQuality_Conjured() {
+        CombinationApprovals.verifyAllCombinations(
+                this::doUpdateQuality,
+                new String[]{"Conjured Mana Cake"},
+                new Integer[]{-1, 0, 1},
+                new Integer[]{0, 1, 4, 10});
     }
 
     private String doUpdateQuality(String name, int sellIn, int quality) {

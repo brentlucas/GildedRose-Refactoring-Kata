@@ -1,0 +1,12 @@
+[Conjured Mana Cake, -1, 0] => Conjured Mana Cake, -2, 0 
+[Conjured Mana Cake, -1, 1] => Conjured Mana Cake, -2, 0 
+[Conjured Mana Cake, -1, 4] => Conjured Mana Cake, -2, 0
+[Conjured Mana Cake, -1, 10] => Conjured Mana Cake, -2, 6
+[Conjured Mana Cake, 0, 0] => Conjured Mana Cake, -1, 0 
+[Conjured Mana Cake, 0, 1] => Conjured Mana Cake, -1, 0 
+[Conjured Mana Cake, 0, 4] => Conjured Mana Cake, -1, 0
+[Conjured Mana Cake, 0, 10] => Conjured Mana Cake, -1, 6
+[Conjured Mana Cake, 1, 0] => Conjured Mana Cake, 0, 0 
+[Conjured Mana Cake, 1, 1] => Conjured Mana Cake, 0, 0 
+[Conjured Mana Cake, 1, 4] => Conjured Mana Cake, 0, 2
+[Conjured Mana Cake, 1, 10] => Conjured Mana Cake, 0, 8
