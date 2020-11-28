@@ -1,12 +1,12 @@
-package com.gildedrose;
+package com.gildedrose.model;
 
-class Conjured extends Item {
-    Conjured(int sellIn, int quality) {
+public class Conjured extends Item {
+    public Conjured(int sellIn, int quality) {
         super("Conjured Mana Cake", sellIn, quality);
     }
 
     @Override
-    protected void doUpdateQuality() {
+    public void doUpdate() {
         decrementQuality();
 
         sellIn--;

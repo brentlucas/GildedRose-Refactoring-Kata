@@ -1,20 +1,24 @@
 package com.gildedrose;
 
+import com.gildedrose.factory.ItemFactory;
+import com.gildedrose.model.Item;
+
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 
-        Item[] items = new Item[] {
-                Item.createItem("+5 Dexterity Vest", 10, 20), //
-                Item.createItem("Aged Brie", 2, 0), //
-                Item.createItem("Elixir of the Mongoose", 5, 7), //
-                Item.createItem("Sulfuras, Hand of Ragnaros", 0, 80), //
-                Item.createItem("Sulfuras, Hand of Ragnaros", -1, 80),
-                Item.createItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                Item.createItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                Item.createItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+        ItemFactory itemFactory = new ItemFactory();
+        Item[] items = new Item[]{
+                itemFactory.createItem("+5 Dexterity Vest", 10, 20), //
+                itemFactory.createItem("Aged Brie", 2, 0), //
+                itemFactory.createItem("Elixir of the Mongoose", 5, 7), //
+                itemFactory.createItem("Sulfuras, Hand of Ragnaros", 0, 80), //
+                itemFactory.createItem("Sulfuras, Hand of Ragnaros", -1, 80),
+                itemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                itemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+                itemFactory.createItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                 // this conjured item does not work properly yet
-                Item.createItem("Conjured Mana Cake", 3, 6)};
+                itemFactory.createItem("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 
