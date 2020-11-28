@@ -13,7 +13,7 @@ public class ItemFactory {
                 item = new BackstagePass(sellIn, quality);
                 break;
             case "Sulfuras, Hand of Ragnaros":
-                item = new Sulfuras(sellIn, quality);
+                item = new Sulfuras(sellIn);
                 break;
             case "Conjured Mana Cake":
                 item = new Conjured(sellIn, quality);

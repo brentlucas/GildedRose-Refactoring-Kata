@@ -1,8 +1,10 @@
 package com.gildedrose.model;
 
 public class Sulfuras extends Item {
-    public Sulfuras(int sellIn, int quality) {
-        super("Sulfuras, Hand of Ragnaros", sellIn, quality);
+    private static final int QUALITY = 80;
+
+    public Sulfuras(int sellIn) {
+        super("Sulfuras, Hand of Ragnaros", sellIn, QUALITY);
     }
 
     @Override
