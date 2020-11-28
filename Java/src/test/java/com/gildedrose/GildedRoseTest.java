@@ -16,15 +16,6 @@ class GildedRoseTest {
                 new Integer[]{0, 1, 49, 50});
     }
 
-    @Test
-    public void updateQuality_Conjured() {
-        CombinationApprovals.verifyAllCombinations(
-                this::doUpdateQuality,
-                new String[]{"Conjured Mana Cake"},
-                new Integer[]{-1, 0, 1},
-                new Integer[]{0, 1, 4, 10});
-    }
-
     private String doUpdateQuality(String name, int sellIn, int quality) {
         Item[] items = new Item[] {Item.createItem(name, sellIn, quality)};
         GildedRose app = new GildedRose(items);
