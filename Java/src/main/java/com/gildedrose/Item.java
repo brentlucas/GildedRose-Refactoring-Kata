@@ -1,9 +1,10 @@
 package com.gildedrose;
 
 public class Item {
-    public String name;
-    public int sellIn;
-    public int quality;
+    private final String name;
+
+    int sellIn;
+    int quality;
 
     Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -12,36 +13,45 @@ public class Item {
     }
 
     public static Item createItem(String name, int sellIn, int quality) {
+        Item result;
         switch (name) {
             case "Aged Brie":
-                return new AgedBrie(sellIn, quality);
+                result = new AgedBrie(sellIn, quality);
+                break;
             case "Backstage passes to a TAFKAL80ETC concert":
-                return new BackstagePass(sellIn, quality);
+                result = new BackstagePass(sellIn, quality);
+                break;
             case "Sulfuras, Hand of Ragnaros":
-                return new Sulfuras(sellIn, quality);
+                result = new Sulfuras(sellIn, quality);
+                break;
             case "Conjured Mana Cake":
-                return new Conjured(sellIn, quality);
+                result = new Conjured(sellIn, quality);
+                break;
             default:
-                return new Item(name, sellIn, quality);
+                result = new Item(name, sellIn, quality);
+                break;
+        }
+        return result;
+    }
+
+    protected void doUpdateQuality() {
+        decrementQuality();
+
+        sellIn--;
+
+        if (sellIn < 0) {
+            decrementQuality();
+        }
+    }
+
+    private void decrementQuality() {
+        if (quality > 0) {
+            quality--;
         }
     }
 
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
-    }
-
-    protected void doUpdateQuality() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
-
-        sellIn = sellIn - 1;
-
-        if (sellIn < 0) {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
-        }
     }
 }

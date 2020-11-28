@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePass extends Item {
+class BackstagePass extends Item {
     BackstagePass(int sellIn, int quality) {
         super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
@@ -8,25 +8,27 @@ public class BackstagePass extends Item {
     @Override
     protected void doUpdateQuality() {
         if (quality < 50) {
-            quality = quality + 1;
+            quality++;
 
             if (sellIn < 11) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+                incrementQuality();
             }
 
             if (sellIn < 6) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+                incrementQuality();
             }
         }
 
-        sellIn = sellIn - 1;
+        sellIn--;
 
         if (sellIn < 0) {
             quality = 0;
+        }
+    }
+
+    private void incrementQuality() {
+        if (quality < 50) {
+            quality++;
         }
     }
 }
