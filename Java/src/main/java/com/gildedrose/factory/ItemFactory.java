@@ -19,7 +19,7 @@ public class ItemFactory {
                 item = new Conjured(sellIn, quality);
                 break;
             default:
-                item = new Item(name, sellIn, quality);
+                item = new RegularItem(name, sellIn, quality);
                 break;
         }
         return item;

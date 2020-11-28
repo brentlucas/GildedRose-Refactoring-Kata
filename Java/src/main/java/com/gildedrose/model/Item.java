@@ -1,6 +1,6 @@
 package com.gildedrose.model;
 
-public class Item {
+public abstract class Item {
     private final String name;
 
     int sellIn;
@@ -12,21 +12,7 @@ public class Item {
         this.quality = quality;
     }
 
-    public void doUpdate() {
-        decrementQuality();
-
-        sellIn--;
-
-        if (sellIn < 0) {
-            decrementQuality();
-        }
-    }
-
-    private void decrementQuality() {
-        if (quality > 0) {
-            quality--;
-        }
-    }
+    public abstract void doUpdate();
 
     @Override
     public String toString() {
