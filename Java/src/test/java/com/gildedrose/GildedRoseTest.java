@@ -20,7 +20,9 @@ class GildedRoseTest {
         ItemFactory factory = new ItemFactory();
         Item[] items = new Item[]{factory.createItem(name, sellIn, quality)};
         GildedRose app = new GildedRose(items);
+
         app.updateQuality();
+
         return app.items[0].toString();
     }
 }

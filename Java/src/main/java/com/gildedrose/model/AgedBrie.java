@@ -9,9 +9,7 @@ public class AgedBrie extends Item {
     public void doUpdate() {
         incrementQuality();
 
-        sellIn--;
-
-        if (sellIn < 0) {
+        if (--sellIn < 0) {
             incrementQuality();
         }
     }

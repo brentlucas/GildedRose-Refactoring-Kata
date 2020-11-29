@@ -9,9 +9,7 @@ public class Conjured extends Item {
     public void doUpdate() {
         decrementQuality();
 
-        sellIn--;
-
-        if (sellIn < 0) {
+        if (--sellIn < 0) {
             decrementQuality();
         }
     }

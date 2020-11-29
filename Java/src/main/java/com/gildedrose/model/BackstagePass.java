@@ -19,9 +19,7 @@ public class BackstagePass extends Item {
             }
         }
 
-        sellIn--;
-
-        if (sellIn < 0) {
+        if (--sellIn < 0) {
             quality = 0;
         }
     }
